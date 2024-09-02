@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA=Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string case</title>
+    <link rel="stylesheet" href="03_js.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>string cases</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="enter a element">
+        </div>
+        <div>
+            <button type="submit" onclick="convertCapitalCase()">convert to capitalcase</button>
+            <button type="submit" onclick="convertLowerCase()">convert to Lowercase</button>
+            <button type="submit" onclick="convertUpperCase()">convert to Uppercase</button>
+        </div>
+        <div id="result">
+     </div>
+    </div>
+    <script>
+        function convertCapitalCase() {
+            let input = document.getElementById("input").value;
+            let words = input.split(" ");
+            let capitalCaseWords = [];
+            
+            for (let word of words) {
+                let capitalWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                capitalCaseWords.push(capitalWord);
+            }
+            
+            let capitalCase = capitalCaseWords.join(" ");
+            document.getElementById("result").textContent = capitalCase;
+        }
+        function convertUpperCase() {
+            let input = document.getElementById("input").value;
+            let upperCase = input.toUpperCase();
+            document.getElementById("result").textContent = upperCase;
+        }
+        function convertLowerCase(){
+            let input= document.getElementById("input").value;
+            let LowerCase=input.toLowerCase();
+            document.getElementById("result").textContent=LowerCase;
+        }
+
+    </script>
+    
+</body>
+</html>
